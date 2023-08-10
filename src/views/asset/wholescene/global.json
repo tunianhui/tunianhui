@@ -1,0 +1,92 @@
+{
+  "flag": true,
+  "msg": "ok",
+  "data": {
+    "dataCount": 4235,
+    "taskCount": 10,
+    "tableCount": 1079,
+    "projectCount": 7,
+    "list": [{
+      "name": "IDC",
+      "value": 218,
+      "unit": "TB",
+      "info": {
+        "board": "信安",
+        "consume": 424,
+        "storeCount": 384.747,
+        "tableCount": 9196,
+        "projectCount": 7,
+        "dmCount": 479,
+        "fmCount": 82,
+        "themeCount": 71
+      },
+      "structure": {},
+      "percent": "21.80"
+    }, {
+      "name": "CDN",
+      "value": 296,
+      "unit": "TB",
+      "info": {
+        "board": "信安",
+        "consume": 106,
+        "storeCount": 555.767,
+        "tableCount": 5076,
+        "projectCount": 2,
+        "dmCount": 84,
+        "fmCount": 21,
+        "themeCount": 51
+      },
+      "structure": {},
+      "percent": "29.60"
+    }, {
+      "name": "DNS",
+      "value": 431,
+      "unit": "TB",
+      "info": {
+        "board": "信安",
+        "consume": 427,
+        "storeCount": 438.4,
+        "tableCount": 5396,
+        "projectCount": 9,
+        "dmCount": 295,
+        "fmCount": 91,
+        "themeCount": 14
+      },
+      "structure": {},
+      "percent": "43.10"
+    }, {
+      "name": "备案",
+      "value": 509,
+      "unit": "TB",
+      "info": {
+        "board": "信安",
+        "consume": 421,
+        "storeCount": 403.92,
+        "tableCount": 5703,
+        "projectCount": 6,
+        "dmCount": 467,
+        "fmCount": 19,
+        "themeCount": 71
+      },
+      "structure": {},
+      "percent": "50.90"
+    }, {
+      "name": "云",
+      "value": 695,
+      "unit": "TB",
+      "info": {
+        "board": "信安",
+        "consume": 475,
+        "storeCount": 536.74,
+        "tableCount": 1116,
+        "projectCount": 9,
+        "dmCount": 249,
+        "fmCount": 35,
+        "themeCount": 92
+      },
+      "structure": {},
+      "percent": "69.50"
+    }],
+    "flow": {}
+  }
+}

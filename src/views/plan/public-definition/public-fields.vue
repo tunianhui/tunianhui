@@ -1,0 +1,369 @@
+<template>
+  <div class="publicFields">
+    <div class="tab-title">
+      <h3 class="mb-15">业务板块</h3>
+      <div class="operationBox">
+        <el-radio-group v-model="tabData" class="mb-15" size="mini" @change="tabChange">
+          <el-radio-button
+            v-for="(item, index) in businessListData"
+            :key="index"
+            :label="item.busin_id"
+          >{{item.busin_name}}</el-radio-button>
+        </el-radio-group>
+        <div class="searchBox">
+          <el-input
+            clearable
+            v-model="inputVal"
+            prefix-icon="el-icon-search"
+            placeholder="请输入关键字搜索"
+            @input="searchChange"
+          ></el-input>
+          <el-button type="primary" icon="el-icon-plus" @click="createdBtn">创建公共字段</el-button>
+        </div>
+      </div>
+    </div>
+    <el-table :data="tableData" v-loading="tableLoading">
+      <el-table-column prop="element_name" show-overflow-tooltip label="名称"></el-table-column>
+      <el-table-column prop="element_code" show-overflow-tooltip label="英文名"></el-table-column>
+      <el-table-column prop="element_type" show-overflow-tooltip label="字段类型"></el-table-column>
+      <el-table-column prop="oper_user" show-overflow-tooltip label="实际添加字段操作人"></el-table-column>
+      <el-table-column prop="oper_time" show-overflow-tooltip label="操作时间"></el-table-column>
+      <el-table-column width="80" label="操作">
+        <template slot-scope="scope">
+          <el-button
+            type="text"
+            class="mr-10"
+            title="编辑"
+            @click="editClick(scope.row)"
+            icon="font-16 el-icon-edit-outline"
+          ></el-button>
+          <SimpleConfirm @confirm="delClick(scope.row)" />
+        </template>
+      </el-table-column>
+    </el-table>
+    <div class="mt-20 pagerBox">
+      <el-pagination
+        @size-change="handleSizeChange"
+        @current-change="handleCurrentChange"
+        :current-page="pageFilters.pageNo"
+        :page-sizes="pageSizes"
+        :page-size="pageFilters.pageSize"
+        layout="total, sizes, prev, pager, next, jumper"
+        :total="total"
+      ></el-pagination>
+    </div>
+    <el-dialog
+      :title="isCreated ? '创建公共字段' : '修改'"
+      :visible.sync="dialogVisible"
+      :before-close="handleClose"
+      :close-on-click-modal="false"
+      :close-on-press-escape="false"
+      v-draggable="{trigger: '.el-dialog__header', body: '.el-dialog', recover: false}"
+    >
+      <el-form
+        :model="publicFieldsData"
+        ref="publicFieldsData"
+        :rules="rules"
+        label-width="100px"
+        label-suffix="："
+        v-loading="dialogLoading"
+      >
+        <el-form-item label="名称" prop="element_name">
+          <el-input v-model="publicFieldsData.element_name" maxlength="64" show-word-limit></el-input>
+        </el-form-item>
+        <el-form-item label="英文名" prop="element_code">
+          <el-input
+            v-model="publicFieldsData.element_code"
+            maxlength="64"
+            show-word-limit
+            :disabled="is_disabled"
+          ></el-input>
+        </el-form-item>
+        <el-form-item label="类型" prop="element_type">
+          <el-select v-model="publicFieldsData.element_type" @change="selectChange">
+            <el-option
+              v-for="(item, index) in dics.data_type"
+              :key="index"
+              :label="item.value"
+              :value="item.key"
+            ></el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item label="业务板块" prop="selectData">
+          <el-checkbox-group v-model="publicFieldsData.selectData" @change="checkboxChange">
+            <el-checkbox
+              v-for="(item, index) in businessSelect"
+              :key="index"
+              :label="item.busin_id"
+            >{{item.busin_name}}</el-checkbox>
+          </el-checkbox-group>
+        </el-form-item>
+      </el-form>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="dialogVisible = false">取 消</el-button>
+        <el-button type="primary" @click="submitForm('publicFieldsData')">确 定</el-button>
+      </span>
+    </el-dialog>
+  </div>
+</template>
+
+<script>
+import {
+  getTableList,
+  getSave,
+  getQueryById,
+  getDel,
+  getEdit
+} from '@/api/plan/publicDefinition/publicFields'
+import {getTableList as businessList} from '@/api/plan/business/businessList'
+import pager from '@/mixins/pager'
+export default {
+  name: 'PublicFields',
+  mixins: [pager],
+  data() {
+    return {
+      isCreated: true,
+      tableLoading: false,
+      dialogLoading: false,
+      is_disabled: false,
+      tabData: '',
+      inputVal: '',
+      tableData: [],
+      total: 0,
+      businessListData: [],
+      businessSelect: [],
+      dialogVisible: false,
+      publicFieldsData: this.publicFieldsDataInit(),
+      businData: {
+        busin_id: '',
+        busin_name: ''
+      },
+      rules: {
+        element_name: [
+          {required: true, message: '请输入名称', trigger: 'blur'}
+        ],
+        element_code: [
+          {required: true, message: '请输入英文名', trigger: 'blur'},
+          {
+            pattern: /^[a-zA-Z_][a-zA-Z_0-9]*$/,
+            message: '英文名只能用英文、数字、下划线组成，且开头必须是字母'
+          }
+        ],
+        element_type: [
+          {required: true, message: '请选择类型', trigger: 'blur'}
+        ],
+        selectData: [
+          {required: true, message: '请选择业务板块', trigger: 'blur'}
+        ]
+      }
+    }
+  },
+  mounted() {
+    this.getTableList()
+    this.businessList()
+  },
+  methods: {
+    publicFieldsDataInit() {
+      return {
+        element_name: '',
+        element_code: '',
+        element_type: '',
+        selectData: []
+      }
+    },
+    async getTableList() {
+      this.tableLoading = true
+      let param = {
+        ...this.pageFilters,
+        busin_id: this.tabData,
+        elementName: this.inputVal
+      }
+      const res = await this.$simpleAsyncTo(getTableList(param), '删除失败')
+      if (res) {
+        this.tableData = res.data
+        this.total = res.totalRecords
+      }
+      this.tableLoading = false
+    },
+    async businessList() {
+      const res = await this.$simpleAsyncTo(businessList(), '')
+      if (res) {
+        this.businessListData = [
+          {busin_name: '全部', busin_id: ''},
+          ...res.data
+        ]
+        this.businessSelect = res.data
+      }
+    },
+    async getSave() {
+      const param = {
+        element_name: this.publicFieldsData.element_name,
+        element_code: this.publicFieldsData.element_code,
+        element_type: this.publicFieldsData.element_type,
+        busin_id: this.businData.busin_id,
+        busin_name: this.businData.busin_name
+      }
+      this.globalLoading()
+      const res = await this.$simpleAsyncTo(getSave(param), '创建失败')
+      if (res) {
+        this.$message({
+          showClose: true,
+          message: res.msg,
+          type: 'success'
+        })
+        this.getTableList()
+      }
+      this.globalLoading().close()
+    },
+    async getEdit() {
+      const param = {
+        element_name: this.publicFieldsData.element_name,
+        element_code: this.publicFieldsData.element_code,
+        element_type: this.publicFieldsData.element_type,
+        ...this.businData
+      }
+      this.globalLoading()
+      const res = await this.$simpleAsyncTo(getEdit(param), '修改失败')
+      if (res) {
+        this.getTableList()
+        this.$message({
+          showClose: true,
+          message: '修改完成',
+          type: 'success'
+        })
+      }
+      this.globalLoading().close()
+    },
+    async getQueryById(row) {
+      this.dialogLoading = true
+      const param = {element_id: row}
+      const res = await this.$simpleAsyncTo(getQueryById(param), '删除失败')
+      if (!this.isCreated) {
+        if (res) {
+          this.publicFieldsData = {
+            element_name: res.data.element.element_name,
+            element_code: res.data.element.element_code,
+            element_type: res.data.element.element_type,
+            selectData: this.selectDataFn(res.data.relations)
+          }
+          this.businData = this.businDataFn(res.data.relations)
+          this.businData.element_id = row
+        }
+      }
+      this.dialogLoading = false
+    },
+    async delClick(row) {
+      let param = {element_id: row.element_id, busin_id: this.tabData}
+      const res = await this.$simpleAsyncTo(getDel(param), '删除失败')
+      if (res) {
+        this.$message({
+          showClose: true,
+          message: res.msg,
+          type: 'success'
+        })
+        this.getTableList()
+      }
+    },
+    tabChange(val) {
+      this.tabData = val
+      this.pageFilters.pageNo = 1
+      this.getTableList()
+    },
+    searchChange(val) {
+      this.getTableList()
+    },
+    createdBtn() {
+      this.dialogLoading = false
+      this.is_disabled = false
+      this.isCreated = true
+      this.publicFieldsData = this.publicFieldsDataInit()
+      this.dialogVisible = true
+    },
+    checkboxChange(val) {
+      this.businData.busin_id = this.publicFieldsData.selectData.join(',')
+      let businName = []
+      this.publicFieldsData.selectData.forEach(item => {
+        let businNameSeclet = this.businessListData.find(
+          businessListDataItem => businessListDataItem.busin_id === item
+        )
+        if (businNameSeclet) businName.push(businNameSeclet.busin_name)
+      })
+      this.businData.busin_name = businName.join(',')
+    },
+    handleClose() {
+      this.publicFieldsData = this.publicFieldsDataInit()
+      this.dialogVisible = false
+    },
+    selectChange() {
+    },
+    submitForm(formName) {
+      this.$refs[formName].validate(valid => {
+        if (valid) {
+          this.dialogVisible = false
+          if (this.isCreated) {
+            this.getSave()
+          } else {
+            this.getEdit()
+          }
+        } else {
+          return false
+        }
+      })
+    },
+    editClick(row) {
+      this.isCreated = false
+      this.dialogVisible = true
+      this.is_disabled = true
+      this.getQueryById(row.element_id)
+    },
+    businDataFn(data) {
+      // console.log(data, '0000000')
+      let businId = []
+      let businName = []
+      data.forEach(item => {
+        businId.push(item.busin_id)
+        businName.push(item.busin_name)
+      })
+      return {
+        busin_id: businId.join(','),
+        busin_name: businName.join(',')
+      }
+    },
+    selectDataFn(data) {
+      let arr = []
+      if (!data) return
+      data.forEach(item => {
+        arr.push(item.busin_id)
+      })
+      // console.log(arr)
+      return arr
+    }
+  }
+}
+</script>
+
+<style lang='scss'>
+.publicFields {
+  .operationBox {
+    // overflow: hidden;
+    .searchBox {
+      width: 400px;
+      float: right;
+      display: flex;
+      & * {
+        margin-right: 4px;
+      }
+    }
+  }
+  .el-radio-button:last-child .el-radio-button__inner {
+    border-radius: 0;
+  }
+  .el-radio-button:first-child .el-radio-button__inner {
+    border-radius: 0;
+    border: none;
+  }
+  .el-radio-button__inner {
+    border: none;
+  }
+}
+</style>

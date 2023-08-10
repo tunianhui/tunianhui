@@ -1,0 +1,248 @@
+@import '@/assets/css/tree-node-brief.scss';
+
+.side-view {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+
+  .sv-top {
+    border-bottom: 1px solid $headerBg;
+    padding: 8px 15px;
+    line-height: 24px;
+    color: $grey10;
+    cursor: pointer;
+
+    .iconfont {
+      font-size: 20px;
+      color: lighten($--color-primary, 10%);
+      margin-right: 15px;
+      vertical-align: middle;
+    }
+  }
+
+  .sv-head {
+    margin: 10px;
+
+    @include clearfix;
+
+    strong {
+      font-size: 14px;
+      color: $grey6;
+    }
+
+    span {
+      float: right;
+
+      i,
+      i.icon {
+        color: $grey5;
+        display: inline-block;
+        margin: 0 4px;
+        cursor: pointer;
+
+        &:hover {
+          color: $grey8;
+        }
+      }
+    }
+  }
+
+  .sv-search {
+    margin: 0 10px 12px;
+
+    .el-input__prefix .el-input__icon {
+      display: inline-block;
+    }
+  }
+
+  .sv-tree.el-tree {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: $sideMenu;
+    color: $grey8;
+    user-select: none;
+    @include scrollbar($grey10);
+
+    .el-tree-node {
+      .el-tree-node__content {
+        // padding-left: 10px;
+        .is-leaf.el-tree-node__expand-icon {
+          // display: none;
+        }
+      }
+
+      &:focus {
+        > .el-tree-node__content {
+          background-color: $sideMenu;
+        }
+      }
+
+      .el-tree-node__content {
+        &:hover {
+          background-color: $sideMenuHover;
+
+          .custom-node .node-controls {
+            opacity: 1;
+          }
+        }
+      }
+
+      .el-tree-node__children {
+        overflow: visible;
+
+        .el-tree-node__content {
+          .custom-node {
+            width: calc(100% - 46px);
+          }
+        }
+      }
+
+      &.is-current {
+        > .el-tree-node__content {
+          background-color: $sideMenuActive;
+
+          .custom-node .node-controls {
+            opacity: 1;
+          }
+        }
+      }
+      .custom-node-file.no-parent,
+      .custom-node-dir {
+        width: calc(100% - 23px);
+      }
+
+      .custom-node {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-right: 2px;
+        flex: 1;
+        position: relative;
+        // z-index: 2;
+
+        > span.node-content {
+          display: flex;
+          width: calc(100% - 46px);
+          align-items: center;
+
+          .node-name {
+            // width: calc(100% - 30px);
+            width: 100%;
+          }
+        }
+
+        .icon {
+          display: inline-block;
+          margin-right: 5px;
+
+          &.file {
+            font-size: 16px;
+            color: lighten($--color-primary, 15%);
+          }
+        }
+
+        .node-controls {
+          opacity: 0;
+
+          .icon {
+            color: $grey5;
+
+            &:hover {
+              color: $grey10;
+            }
+          }
+        }
+
+        .more-control {
+          position: relative;
+          overflow: visible;
+          display: inline-block;
+          height: 26px;
+          line-height: 26px;
+
+          &:hover {
+            ul {
+              display: block;
+              z-index: 2;
+            }
+          }
+
+          .el-icon-more {
+            display: inline-block;
+            height: 26px;
+            line-height: 26px;
+            transform: rotate(90deg);
+          }
+
+          ul {
+            position: absolute;
+            top: 100%;
+            right: -2px;
+            background: $grey10;
+            margin-top: -1px;
+            z-index: 1;
+            display: none;
+
+            li {
+              padding: 5px 15px;
+              color: $grey3;
+              cursor: pointer;
+
+              i {
+                margin-right: 5px;
+              }
+
+              &:hover {
+                background-color: $grey6;
+                color: $grey2;
+              }
+            }
+          }
+        }
+      }
+
+      .el-tree-node__expand-icon {
+        & + span.custom-node {
+          .dir {
+            font-size: 14px;
+
+            &::before {
+              content: '\e78a';
+            }
+          }
+        }
+
+        &.expanded + span.custom-node {
+          .dir {
+            &::before {
+              content: '\e784';
+            }
+          }
+        }
+      }
+    }
+
+    .el-loading-mask {
+      background-color: rgba($grey10, 0.1);
+    }
+  }
+
+  .sv-bottom {
+    color: $grey10;
+    padding: 8px 10px;
+    background-color: $sideMenuStress;
+    position: relative;
+
+    i {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

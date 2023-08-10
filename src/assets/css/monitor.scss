@@ -1,0 +1,111 @@
+.monitor-filter {
+  .active {
+    .el-card__body {
+      padding: 0 20px;
+      height: 0;
+    }
+  }
+  .new-btn {
+    display: inline-block;
+    height: 28px;
+    padding: 2px 12px;
+    border: 1px solid $generalColor;
+    box-sizing: border-box;
+    color: $generalColor;
+    cursor: pointer;
+    vertical-align: bottom;
+  }
+  .table-record {
+    i {
+      font-size: 16px;
+    }
+  }
+  .box-card {
+    font-size: 12px;
+    position: relative;
+    box-shadow: none;
+    .el-card__body {
+      background: #f8f8fa;
+      box-sizing: border-box;
+      padding-bottom: 5px;
+      transition: height 5s ease-in-out;
+      height: 100%;
+    }
+    .item {
+      position: relative;
+      overflow: hidden;
+      padding: 5px 10px;
+      margin-bottom: 5px;
+      border: 1px solid transparent;
+      background: $screenItemTag;
+      color: $grey4;
+      margin-right: 10px;
+      height: 28px;
+      cursor: pointer;
+      &:hover {
+        background: $grey7;
+      }
+      &.active {
+        border: 1px solid $--color-primary;
+        color: $--color-primary;
+        &:hover {
+          background: $grey10;
+        }
+      }
+      .close {
+        position: absolute;
+        bottom: 0px;
+        right: -7px;
+        width: 14px;
+        height: 14px;
+        transform: skewX(-45deg);
+        background:  $tabTitleColor;
+        color: $grey10;
+        cursor: pointer;
+        i {
+          transform: skewX(45deg) scale(.7);
+        }
+      }
+    }
+    .label {
+      color: $grey5;
+      margin-right: 50px;
+    }
+    .current {
+      min-height: 55px;
+      align-items: center;
+      background: $grey10;
+      .search {
+        margin-right: 20px;
+        .el-input {
+          width: 200px;
+          .el-input__inner {
+            border: none;
+            border-bottom: 1px solid $grey6;
+            border-radius: 0;
+          }
+        }
+      }
+      .list {
+        flex-wrap: wrap;
+      }
+    }
+    .group {
+      border-bottom: 1px solid $grey6;
+      .input {
+        width: 200px;
+      }
+    }
+    .toggle {
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      background: #f8f8fa;
+      i {
+        padding: 10px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+    }
+  }
+}

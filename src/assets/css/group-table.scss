@@ -1,0 +1,89 @@
+.group-table.el-table {
+  th {
+    font-size: 12px;
+    background: $grey7;
+
+    .el-link {
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .el-dropdown {
+      line-height: 20px;
+    }
+  }
+
+  .group-column-head {
+    .cell {
+      padding: 0;
+    }
+
+    background: $grey8;
+  }
+
+  tr.el-table__row:hover {
+    td:not(.group-column-head) {
+      background: $grey10;
+    }
+  }
+
+  td:not(.group-column-head) {
+    height: 40px;
+    vertical-align: middle;
+
+    .cell {
+      height: 50px;
+      // line-height: 50px;
+      // line-height: 1;
+      vertical-align: middle;
+      display: flex;
+      align-items: center;
+
+      > div {
+        // height: 100%;
+        // line-height: 1;
+      }
+
+      .relation-column {
+        p {
+          line-height: 20px;
+          cursor: pointer;
+        }
+      }
+
+      .el-tag + .el-button {
+        position: relative;
+        top: -1px;
+      }
+    }
+
+    .uneditable.el-button {
+      color: $grey5;
+    }
+  }
+
+  .custom-icon-cell {
+    height: 33px;
+    line-height: 33px;
+  }
+
+  .simple-confirm-btn {
+    font-size: 16px;
+    padding-left: 10px;
+  }
+
+  // .el-button--text:not(.is-disabled) {
+  //   color: $grey4;
+
+  //   // &.is-disabled {
+  //   //   color: $grey5;
+  //   // }
+  //   &:hover {
+  //     color: $grey2;
+  //   }
+  // }
+
+  .el-icon-success {
+    // el-icon-success
+  }
+}

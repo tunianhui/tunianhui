@@ -1,0 +1,150 @@
+// 标签样式
+@mixin tag($placement: left, $bg: $tagColor, $color: $grey10) {
+  $size: 10px;
+
+  position: relative;
+  background: $bg;
+  color: $color;
+  font-size: 12px;
+  font-weight: normal;
+  margin-#{$placement}: $size;
+
+  @if ($placement == left) {
+    padding: 0 2px;
+    &:before {
+      position: absolute;
+      top: 0;
+      left: -$size;
+      @include triangle(top-right, $bg, $size);
+    }
+    &:after {
+      position: absolute;
+      bottom: 0;
+      left: -$size;
+      @include triangle(bottom-right, $bg, $size);
+    }
+  } @else if($placement == right) {
+    padding: 0 2px;
+    &:before {
+      position: absolute;
+      top: 0;
+      right: -$size;
+      @include triangle(top-left, $bg, $size);
+    }
+    &:after {
+      position: absolute;
+      bottom: 0;
+      right: -$size;
+      @include triangle(bottom-left, $bg, $size);
+    }
+  } @else if($placement == top) {
+    writing-mode: tb-rl;
+    padding: 2px 0;
+    &:before {
+      position: absolute;
+      top: -$size;
+      left: 0;
+      @include triangle(bottom-left, $bg, $size);
+    }
+    &:after {
+      position: absolute;
+      top: -$size;
+      right: 0;
+      @include triangle(bottom-right, $bg, $size);
+    }
+  } @else if($placement == bottom) {
+    writing-mode: tb-rl;
+    padding: 2px 0;
+    &:before {
+      position: absolute;
+      bottom: -$size;
+      left: 0;
+      @include triangle(top-left, $bg, $size);
+    }
+    &:after {
+      position: absolute;
+      bottom: -$size;
+      right: 0;
+      @include triangle(top-right, $bg, $size);
+    }
+  }
+}
+
+@mixin chageTagColor($placement: left, $bg: $tagColor) {
+  background: $bg;
+  @if ($placement == left or $placement == right) {
+    &::before {
+      border-top-color: $bg;
+    }
+    &::after {
+      border-bottom-color: $bg;
+    }
+  } @else if($placement == top) {
+    &::before {
+      border-bottom-color: $bg;
+    }
+    &::after {
+      border-bottom-color: $bg;
+    }
+  } @else if($placement == bottom) {
+    &::before {
+      border-top-color: $bg;
+    }
+    &::after {
+      border-top-color: $bg;
+    }
+  }
+}
+
+// 三角
+@mixin triangle($placement, $color, $size) {
+  content: '';
+  width: 0;
+  height: 0;
+  @if ($placement == up) {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-bottom: $size * 2 solid $color;
+  } @else if($placement == down) {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-top: $size * 2 solid $color;
+  } @else if($placement == left) {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-right: $size * 2 solid $color;
+  } @else if($placement == right) {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left: $size * 2 solid $color;
+  } @else if($placement == top-left) {
+    border-top: $size solid $color;
+    border-right: $size solid transparent;
+  } @else if($placement == top-right) {
+    border-top: $size solid $color;
+    border-left: $size solid transparent;
+  } @else if($placement == bottom-left) {
+    border-bottom: $size solid $color;
+    border-right: $size solid transparent;
+  } @else if($placement == bottom-right) {
+    border-bottom: $size solid $color;
+    border-left: $size solid transparent;
+  }
+}
+
+// 平行四边形
+@mixin parallelogram($width, $height, $angle, $color) {
+  width: $width;
+  height: $height;
+  transform: skew(#{$angle}deg);
+  background: $color;
+}
+
+// 梯形
+@mixin trapezoid($width, $height, $angle, $color) {
+  border-bottom: $width solid $color;
+  border-left: $height solid transparent;
+  border-right: $height solid transparent;
+  height: 0;
+  width: $width;
+}

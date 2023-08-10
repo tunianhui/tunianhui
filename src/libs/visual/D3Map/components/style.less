@@ -1,0 +1,118 @@
+.v-map {
+  g.v-group-background {
+    pointer-events: none;
+    path {
+      // fill: rgba(1, 13, 19, 0.25);
+      fill: rgba(2, 171, 255, 0.35);
+    }
+  } //地区样式
+  .v-areas {
+    // filter: url(#filter);
+    // filter: url(#f-shadow);
+    // fill: rgba(1, 59, 64, 1);
+    // fill: url(#mapBg);
+    // stroke: rgba(1, 59, 64, 1);
+    // stroke-width: 1;
+    // stroke: rgba(255, 255, 255, 1);
+  }
+  .v-area {
+    // stroke-width: 0.5;
+    stroke: #fff; // fill: rgba(1, 59, 64, 1);
+    // fill: url(#mapBg);
+    // fill: transparent;
+    fill-rule: evenodd;
+    &.active,
+    &:hover {
+      // fill: rgb(236, 49, 49);
+      fill: rgba(2, 171, 255, 0.6);
+    }
+  }
+  .v-label {
+    fill: rgba(225, 225, 225, 1);
+    text-anchor: middle;
+    font-size: 10px; // writing-mode: tb-rl;
+    position: relative;
+    z-index: 2;
+    &.active,
+    &:hover {
+      fill: rgba(225, 225, 225, 1);
+    }
+  }
+  .v-area.v-area-selected {
+    stroke-width: 0.5;
+    filter: url(#f-shadow);
+  } //条形图样式
+  .v-bar {
+    cursor: pointer;
+    fill: url(#f-bar);
+    fill-opacity: 0.75;
+    &:hover {
+      fill: url(#f-bar-hover);
+      fill-opacity: 0.9;
+    }
+  } //连线样式
+  .v-line {
+    cursor: pointer;
+    stroke-width: 2;
+    stroke: url(#f-line);
+    fill: transparent;
+  }
+  .v-line-point {
+    stroke: url(#f-line-point);
+    fill: rgba(19, 146, 76, 0.75);
+  } //飞线样式
+  .v-fly-line {
+    stroke: url(#f-fly);
+    fill: transparent;
+  } //扩散点样式
+  .v-point {
+    fill: url(#f-point);
+    pointer-events: none;
+  }
+  .v-path-animate {
+    // animation: flicker 2s linear infinite;
+    // animation-fill-mode: both;
+    stroke-width: 1; // stroke: #ff7700;
+  }
+  @keyframes flicker {
+    0% {
+      /*表示虚线描边。数组是虚线数组。*/
+      // stroke-dasharray: 0, 2651;
+      // /*表示虚线的起始偏移*/
+      // stroke-dashoffset: 0;
+      stroke-width: 1;
+      stroke-opacity: 0;
+    }
+    /* 50% {
+      stroke-dasharray: 2651, 0;
+      stroke-dashoffset: 0;
+      stroke-opacity: 0.4;
+      stroke-width: 2;
+    } */
+    100% {
+      // stroke-dasharray: 0, 2651;
+      // stroke-dashoffset: -2651;
+      stroke-opacity: 0.8;
+      stroke-width: 2;
+      filter: url(#filter);
+    }
+  }
+  @-webkit-keyframes polanim {
+    0% {
+      stroke-dasharray: 0, 2651;
+      stroke-dashoffset: 0;
+    }
+    50% {
+      stroke-dasharray: 2651, 0;
+      stroke-dashoffset: 0;
+      fill: rgba(255, 119, 0, 0.5);
+      opacity: 1;
+    }
+    100% {
+      stroke-dasharray: 0, 2651;
+      stroke-dashoffset: -2651;
+      fill: rgba(0, 0, 0, 0);
+      opacity: 1;
+    }
+  }
+}

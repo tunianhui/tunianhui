@@ -1,0 +1,99 @@
+body {
+  --brand: rgba(46, 116, 255, 1);
+  --brand-hover: rgba(71, 148, 255, 1);
+  --brand-press: rgba(41, 88, 230, 1);
+  --brand-disabled: rgba(46, 116, 255, 0.35);
+  --brand-border: rgba(148, 184, 255, 1);
+  --brand-background: rgba(230, 240, 255, 1);
+
+  --success: rgba(10, 196, 72, 1);
+  --success-border: rgba(130, 224, 162, 1);
+  --success-background: rgba(224, 255, 235, 1);
+
+  --error: rgba(242, 60, 60, 1);
+  --error-border: rgba(248, 157, 157, 1);
+  --error-background: rgba(255, 230, 230, 1);
+
+  --warning: rgba(255, 173, 10, 1);
+  --warning-border: rgba(255, 214, 133, 1);
+  --warning-background: rgba(255, 245, 224, 1);
+
+  --help: rgba(46, 116, 255, 1);
+  --help-border: rgba(148, 184, 255, 1);
+  --help-background: rgba(230, 240, 255, 1);
+
+  --waiting: rgba(152, 115, 255, 1);
+  --waiting-border: rgba(202, 184, 255, 1);
+  --waiting-background: rgba(236, 230, 255, 1);
+
+  --invalid: rgba(0, 0, 0, 0.25);
+  --invalid-border: rgba(0, 0, 0, 0.15);
+  --invalid-background: rgba(0, 0, 0, 0.04);
+
+  --cyan-blue: rgba(37, 184, 184, 1);
+  --orange: rgba(255, 141, 26, 1);
+  --sky-blue: rgba(51, 170, 255, 1);
+
+  --white: rgba(255, 255, 255, 1);
+  --black: rgba(0, 0, 0, 1);
+  --black90: rgba(0, 0, 0, 0.9);
+  --black85: rgba(0, 0, 0, 0.85);
+  --black70: rgba(0, 0, 0, 0.7);
+  --black65: rgba(0, 0, 0, 0.65);
+  --black50: rgba(0, 0, 0, 0.5);
+  --black45: rgba(0, 0, 0, 0.45);
+  --black25: rgba(0, 0, 0, 0.25);
+  --black30: rgba(0, 0, 0, 0.3);
+  --black15: rgba(0, 0, 0, 0.15);
+  --black10: rgba(0, 0, 0, 0.1);
+  --black06: rgba(0, 0, 0, 0.06);
+  --black04: rgba(0, 0, 0, 0.04);
+  --black02: rgba(0, 0, 0, 0.02);
+
+  --black85-opcity1: rgba(38, 38, 38, 1);
+  --black65-opcity1: rgba(89, 89, 89, 1);
+  --black45-opcity1: rgba(140, 140, 140, 1);
+  --black25-opcity1: rgba(191, 191, 191, 1);
+  --black15-opcity1: rgba(217, 217, 217, 1);
+  --black10-opcity1: rgba(229, 229, 229, 1);
+  --black06-opcity1: rgba(240, 240, 240, 1);
+  --black04-opcity1: rgba(245, 245, 245, 1);
+  --black02-opcity1: rgba(250, 250, 250, 1);
+
+  --tag0: rgb(26, 125, 255);
+  --tag0-light: rgb(232, 242, 255);
+  --tag0-transparent: rgb(26, 125, 255, 0.4);
+  --tag1: rgb(255, 117, 26);
+  --tag1-light: rgb(255, 241, 232);
+  --tag1-transparent: rgba(255, 117, 26, 0.4);
+  --tag2: rgb(22, 202, 214);
+  --tag2-light: rgb(231, 249, 250);
+  --tag2-transparent: rgba(22, 202, 214, 0.4);
+  --tag3: rgb(112, 103, 245);
+  --tag3-light: rgb(240, 239, 254);
+  --tag3-transparent: rgba(112, 103, 245, 0.4);
+  --tag4: rgb(102, 163, 204);
+  --tag4-light: rgb(239, 245, 249);
+  --tag4-transparent: rgba(102, 163, 204, 0.4);
+  --tag5: rgb(255, 174, 15);
+  --tag5-light: rgb(255, 246, 231);
+  --tag5-transparent: rgba(255, 174, 15, 0.4);
+  --tag6: rgb(219, 121, 114);
+  --tag6-light: rgb(251, 241, 240);
+  --tag6-transparent: rgba(219, 121, 114, 0.4);
+  --tag7: rgb(150, 177, 250);
+  --tag7-light: rgb(244, 247, 254);
+  --tag7-transparent: rgba(150, 177, 250, 0.4);
+  --tag8: rgb(52, 173, 141);
+  --tag8-light: rgb(234, 246, 243);
+  --tag8-transparent: rgba(52, 173, 141, 0.4);
+  --tag9: rgb(245, 147, 173);
+  --tag9-light: rgb(253, 244, 246);
+  --tag9-transparent: rgba(245, 147, 173, 0.4);
+  --tag10: rgb(140, 144, 184);
+  --tag10-light: rgb(243, 243, 247);
+  --tag10-transparent: rgba(140, 144, 184, 0.4);
+  --tag11: rgb(204, 177, 143);
+  --tag11-light: rgb(249, 247, 243);
+  --tag11-transparent: rgba(204, 177, 143, 0.4);
+}

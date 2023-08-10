@@ -1,0 +1,91 @@
+
+// el-form
+.el-form {
+  .el-form-item__label {
+    color: #666;
+    padding-bottom: 0;
+  }
+
+  .el-form--label-top {
+    .el-form-item__label {
+      padding: 0;
+    }
+  }
+}
+
+.el-drawer__header {
+  font-size: 18px;
+  color: #1a1a1a;
+  border-bottom: 1px solid #e3e4e6;
+  padding-bottom: 20px;
+}
+
+// el-scrollbar
+.el-scrollbar {
+  .el-scrollbar__view {
+    .el-select-dropdown__item {
+      height: auto;
+      max-height: 274px;
+      overflow: hidden;
+      overflow-y: auto;
+    }
+  }
+}
+
+// el-tooltip__popper
+.el-tooltip__popper {
+  max-width: 400px;
+  border-radius: 0;
+  background-color: #3E4760;
+  &[x-placement^=top] .popper__arrow {
+    border-top-color:  #3E4760!important;
+    &::after {
+      border-top-color:  #3E4760!important;
+    }
+  }
+}
+
+// el-dialog
+.el-dialog {
+  background-color: $grey9;
+  .el-dialog__header {
+    border-bottom: 1px solid $grey6;
+    .el-dialog__title {
+      color: $grey2;
+      font-weight: 600;
+    }
+  }
+  .el-dialog__body {
+    padding-top: 20px;
+    padding-bottom: 0;
+    border-bottom: 1px solid $grey6;
+  }
+  .el-dialog__footer {
+    padding-top: 20px;
+  }
+  .el-select {
+    width: 100%;
+  }
+  .el-autocomplete {
+    width: 100%;
+  }
+}
+
+// el-transfer
+.el-transfer {
+  .el-transfer-panel {
+    width: 300px;
+  }
+  .el-transfer__buttons {
+    padding: 0 10px;
+  }
+  .el-checkbox-group {
+    .el-checkbox:last-of-type {
+      margin-right: 30px;
+    }
+  }
+}
+
+.el-table th.el-table__cell {
+  background-color: #eff3f8;
+}

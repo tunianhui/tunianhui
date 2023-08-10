@@ -1,0 +1,118 @@
+{
+  "flag": true,
+  "msg": "ok",
+  "data": {
+    "left": {
+      "label": "数据接入进度",
+      "value": 0.6,
+      "briefHead": "Data Source",
+      "headValue": 10,
+      "brief": [{
+        "title": "数据接入 Top 5",
+        "data": [{
+          "label": "金融",
+          "value": 1
+        }, {
+          "label": "信安",
+          "value": 0.89
+        }, {
+          "label": "反诈",
+          "value": 0.83
+        }, {
+          "label": "工业互联网",
+          "value": 0.8
+        }, {
+          "label": "大数据",
+          "value": 0.76
+        }]
+      }, {
+        "title": "数据接入 Least 5",
+        "data": [{
+          "label": "金融",
+          "value": 0.14
+        }, {
+          "label": "信安",
+          "value": 0.12
+        }, {
+          "label": "反诈",
+          "value": 0.09
+        }, {
+          "label": "工业互联网",
+          "value": 0.07
+        }, {
+          "label": "大数据",
+          "value": 0.06
+        }]
+      }]
+    },
+    "center": {
+      "label": "总表数",
+      "value": 1198,
+      "brief": [{
+        "title": "规范定义",
+        "data": [{
+          "label": "维度",
+          "value": 121
+        }, {
+          "label": "业务过程",
+          "value": 77
+        }, {
+          "label": "原子指数",
+          "value": 137
+        }, {
+          "label": "业务限定",
+          "value": 322
+        }, {
+          "label": "派生指标",
+          "value": 69
+        }]
+      }, {
+        "title": "数据模型",
+        "data": [{
+          "label": "维度逻辑表",
+          "value": 121
+        }, {
+          "label": "事实逻辑表",
+          "value": 774
+        }, {
+          "label": "汇总逻辑表",
+          "value": 97
+        }]
+      }]
+    },
+    "right": {
+      "label": "数据应用",
+      "brief": [{
+        "label": "数据存储",
+        "data": [{
+          "label": "总存储",
+          "value": "143TB"
+        }, {
+          "label": "使用率",
+          "value": "143TB"
+        }, {
+          "label": "剩余空间",
+          "value": "49TB"
+        }]
+      }, {
+        "label": "数据萃取",
+        "data": [{
+          "label": "实体类目",
+          "value": 43
+        }, {
+          "label": "标签权重总值",
+          "value": 0.66
+        }]
+      }, {
+        "label": "数据服务",
+        "data": [{
+          "label": "服务次数",
+          "value": 4232
+        }, {
+          "label": "服务率",
+          "value": "77%"
+        }]
+      }]
+    }
+  }
+}

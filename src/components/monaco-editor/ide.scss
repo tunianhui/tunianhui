@@ -1,0 +1,126 @@
+.monaco-editor {
+
+  .minimap {
+    box-shadow: -2px 0 2px rgba(0, 0, 0, .2);
+
+    .minimap-slider,
+    .minimap-slider .minimap-slider-horizontal {
+      background: rgba(121, 121, 121, 0.2);
+    }
+  }
+
+  // 查找弹窗
+  .find-widget {
+    // background-color: $sideMenuActive !important;
+
+    input {
+      background-color: $grey1 !important;
+    }
+  }
+
+  .context-view.monaco-menu-container {
+    .monaco-menu {
+      .action-menu-item {
+        line-height: 1.8em;
+      }
+    }
+  }
+
+  .keybinding {
+    color: hsla(0, 0%, 100%, .4);
+  }
+
+  .suggest-widget {
+    .monaco-list .monaco-list-row {
+      .contents>.main {
+
+        .type-label {
+          display: inline !important;
+          color: #999;
+        }
+      }
+
+      .suggest-icon {
+
+        &.keyword,
+        &.constant,
+        &.variable,
+        &.field,
+        &.function,
+        &.method,
+        &.unit,
+        &.interface,
+        &.struct,
+        &.constructor,
+        &.module {
+          &::before {
+            font-family: iconfont !important;
+            background-image: none !important;
+            font-size: 16px;
+            color: #46aaff;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-style: normal;
+            -webkit-text-stroke-width: .2px;
+          }
+        }
+
+        // 关键词
+        &.keyword,
+        &.constant,
+        &.variable {
+          &::before {
+            content: "\e953";
+          }
+        }
+
+        // 字段
+        &.field:before {
+          content: "\e67d";
+        }
+
+        // 函数
+        &.function,
+        &.method {
+          &::before {
+            content: "\e607";
+          }
+        }
+
+        // 维度逻辑表: 'Unit',
+        // 事实逻辑表: 'Interface',
+        // 汇总逻辑表: 'Struct'
+
+        // 维度逻辑表
+        &.unit:before {
+          content: "\e6ea";
+        }
+
+        // 事实逻辑表
+        &.interface:before {
+          content: "\e6f2";
+        }
+
+        // 汇总逻辑表
+        &.struct:before {
+          content: "\e6f8";
+        }
+
+        // 物理表
+        &.constructor:before {
+          content: "\e6f3";
+        }
+
+        // 业务板块
+        &.module:before {
+          content: "\e955";
+        }
+      }
+    }
+  }
+
+  // .suggest-widget .monaco-list .monaco-list-row .suggest-icon.field::before,
+  // .monaco-editor.hc-black .suggest-widget .monaco-list .monaco-list-row .suggest-icon.field::before {
+  //   background-image:
+  // }
+}

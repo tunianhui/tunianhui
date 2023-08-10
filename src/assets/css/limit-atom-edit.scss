@@ -1,0 +1,110 @@
+.limit-atom-edit {
+  height: 100%;
+  background-color: $grey8;
+
+  .edit-content {
+    height: 100%;
+    padding: 0px 15px 10px;
+    font-size: 12px;
+
+    .basic-info-box {
+      background-color: $grey10;
+      padding: 10px;
+    }
+
+    .el-form-item.cus-form-item {
+      .el-form-item__error {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    .empty-content {
+      margin-top: 10vh;
+
+      .empty-text {
+        margin-top: 3vh;
+      }
+    }
+
+    .third-title {
+      display: inline-block;
+    }
+
+    .tab-title {
+      display: inline-block;
+      padding: 10px 0;
+
+      >li {
+        display: inline-block;
+        margin-left: 30px;
+        padding-bottom: 3px;
+        position: relative;
+        cursor: pointer;
+
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: -2px;
+          height: 2px;
+          width: 0;
+          left: 0;
+          background: $--color-primary;
+          transition: $transition;
+        }
+
+        &.active {
+          &:after {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .tab-line {
+      height: 1px;
+      background: $grey6;
+      margin-top: -8px;
+    }
+
+    .refresh-button {
+      float: right;
+      margin-top: 4px;
+    }
+
+    .sub-title {
+      height: 36px;
+
+      .title {
+        display: inline-block;
+        line-height: 36px;
+      }
+
+      .el-button {
+        margin: 4px 0;
+      }
+    }
+// .model-mini-content {
+//   padding: 5px 0;
+//   height: 100%;
+//   box-sizing: border-box;
+
+//   >div {
+//     border: 1px solid $grey6;
+//   }
+
+//   .title {
+//     color: $grey3;
+//     font-size: 14px;
+//     line-height: 18px;
+//     padding-top: 12px;
+//   }
+
+//   .icon {
+//     cursor: pointer;
+//     font-size: 18px;
+//     color: $--color-primary;
+//   }
+// }
+  }
+}

@@ -1,0 +1,36 @@
+.tree-node-brief {
+  // position: relative;
+  font-size: 12px;
+
+  .brief-tag {
+    // $height: 16px;
+    @include tag();
+    position: absolute;
+    top: -1px;
+    right: -1px;
+
+
+    &[type = "6"] {
+      @include chageTagColor(left, $devTag);
+    }
+    &[type = "5"] {
+      @include chageTagColor(left, $draftTag);
+    }
+    &[type = "published"] {
+      @include chageTagColor(left, $publishedTag);
+    }
+  }
+  .brief-head{
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid $grey4;
+  }
+  .label {
+    color: $grey4;
+    line-height: 20px;
+  }
+  .value {
+    color: $grey8;
+    line-height: 20px;
+  }
+}

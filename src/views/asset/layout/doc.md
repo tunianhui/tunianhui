@@ -1,0 +1,36 @@
+## 开发模块
+
+- 开发模块的 layout 为 dev/index.vue
+- 开发模块中工作区间 tabs 的管理在 index.vue 中，需要配合 tab-components.js 使用
+  - 每个开发组件下面的路由页面只需要添加 rd-tree.js 这个 mixin 文件，这样`this.tabsStore`在开发页面下面就直接使用的
+  - 如果没有添加`rd-tree.js` mixin 混合，则需要添加在组件中添加属性`inject: ['tabStore']`，与 data 并列
+    - `rd-tree.js`混合文件中，对树的渲染已经处理好，且写好了常用的删除、过滤等方法在写树上的相关功能时先看一下这个文件中定义的方法
+  - 完成上面的操作通过`this.tabStore.states`可以获取到 tabs 中的对象信息
+  - 新增一个新的 tab 时需要，只需执行`this.tabStore.commit('add', payload)`方法
+    - 显示文件引用，`payload`对象中添加属性`visibleFileQuote`的值为`true`
+  - payload 为一个对象，至少有以下几个属性
+    - label: 显示在 tab 标签页上的文字
+    - name: tab 的唯一标记, 树中用的是树的节点 id，一般情况下，请遵守以下规则：
+      - 新建：`new_{componentName}}`
+      - 修改：`modify_{componentName}}`
+      - 查看：`view__{componentName}_${Date.now()}`
+    - tabType: tab 的 icon 图标，这里使用'confing/rd-config.js'中定义 key
+    - component: tab-pane 中显示的 component 名称，需要是唯一的
+      - 新建或修改对应的组件名称应该是`${moduleName}Edit`
+      - 查看对应的组件名称应该是`${moduleName}View`
+    - tab-components.js 为 tab 中需要用到的 component 名称与组件的映射，此处为异步加载组件，所以加载时不会一下子将所有映射的组件加载出来，而是需要用到后，按需加载
+      - **重要：tabs 中需要用到的 component，必须添加到这个映射中，不然组件不能显示**
+    - 使用 tab-components 是为配合 storage 使用，让用户在开发页面时，刷新浏览器时,页面回显，且方便跨组件之间的交互
+  - tab 的删除
+    - `this.tabStore.commit('remove', name)`
+    - 左侧的树中需要删除文件或文件夹树节点时，也需要将右侧的 tabs 中的 tab 删除，具体例子查看 `./norm-modeling/norm-define/dimension/index.vue`
+- 左右两边的组件事件交互，使用 eventEmitter
+  - 触发事件 `this.$root.eventEmitter.emit(eventName, args)`
+  - 监听事件 `this.$root.eventEmitter.on(eventName, callback)`
+  - 在 beforeRouteLeave 中销毁监听的事件 `this.$root.eventEmitter.off(eventName, callback)`
+- 规范定义下的五个模块会有对象列表页
+  - 父组件为 dev/object-table.vue
+  - 每个模块分别对应的组件为各自文件下的 table.vue，table.vue 中可以引用 mixins/rd-table.js 文件，`rd-table.js`文件中包含删除、点编辑查询、下线、刷新列表等方法
+  - 具体例子可以查看`./norm-modeling/norm-define/dimension/table.vue`
+- `mixins/rd-edit.js`文件,包含提交、定位等方法，具体例子可以查看`./norm-modeling/norm-define/dimension/edit.vue`
+- `mixins/rd-view.js`文件,包含点击编辑跳转到编辑页、下线、删除等方法，具体例子可以查看`./norm-modeling/norm-define/dimension/view.vue`

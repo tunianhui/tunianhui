@@ -1,0 +1,70 @@
+.launch-push {
+  .third-title {
+    margin-top: 20px;
+  }
+  .basic-info {
+    background-color: #fff;
+    padding-top: 20px;
+  }
+  .edit-wrapper {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    .steps-wrapper {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #d9d9d9;
+      .steps {
+        width: 500px;
+      }
+    }
+    .button-wrapper {
+      display: flex;
+      justify-content: flex-end;
+    }
+    .proList {
+      p {
+        color: #848487;
+        font-size: 14px;
+        margin-bottom: 6px;
+      }
+      .item {
+        position: relative;
+        overflow: hidden;
+        padding: 5px 10px;
+        margin-bottom: 5px;
+        border: 1px solid transparent;
+        background: $screenItemTag;
+        color: $grey4;
+        margin-right: 10px;
+        cursor: pointer;
+        &:hover {
+          background: $grey7;
+        }
+        &.active {
+          border: 1px solid $--color-primary;
+          color: $--color-primary;
+          &:hover {
+            background: $grey10;
+          }
+        }
+        .close {
+          position: absolute;
+          bottom: 0px;
+          right: -7px;
+          width: 14px;
+          height: 14px;
+          transform: skewX(-45deg);
+          background:  $tabTitleColor;
+          color: $grey10;
+          cursor: pointer;
+          i {
+            transform: skewX(45deg) scale(.7);
+          }
+        }
+      }
+    }
+  }
+}

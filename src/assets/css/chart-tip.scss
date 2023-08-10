@@ -1,0 +1,104 @@
+.chart-tip {
+  $bg: $sideMenu;
+  $baseColor: $grey5;
+  $labelColor: $info;
+  $valueColor: $grey10;
+  $borderColor: $sideMenuHover;
+
+  position: absolute;
+  background-color: $bg;
+  transition: opacity .3s ease-in-out;
+  box-sizing: border-box;
+
+  .chart-tip-wrapper {
+    padding: 15px;
+  }
+
+  h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .dl-group {
+    dl {
+      padding: 0 15px;
+
+      &:not(:last-child) {
+        border-right: 1px solid $borderColor;
+      }
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        padding-right: 0;
+      }
+
+      dt {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  p,
+  dd {
+    color: $baseColor;
+    line-height: 28px;
+    font-size: 12px;
+
+    .label {
+      text-align: right;
+      color: $labelColor;
+    }
+
+    .value {
+      color: $valueColor;
+    }
+  }
+
+  &.graphic-tip {
+    top: 100%;
+    left: 100%;
+    width: 240px;
+    opacity: 0;
+    z-index: 10;
+    // top: 0;
+    // left: 0;
+
+    p {
+      display: flex;
+
+      span {
+        flex: 1;
+      }
+    }
+  }
+
+  .progress-item {
+    display: flex;
+    // justify-content: center;
+    justify-content: left;
+    align-items: center;
+
+    .label {
+      display: inline-block;
+      width: 70px;
+      @include textEllipsis();
+    }
+
+    .el-progress {
+      width: 120px;
+      margin: 0 10px;
+
+      .el-progress__text {
+        color: $baseColor;
+      }
+    }
+
+    .per {
+      color: $baseColor;
+    }
+  }
+}

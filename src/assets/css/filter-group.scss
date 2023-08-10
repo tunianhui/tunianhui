@@ -1,0 +1,124 @@
+.my-filter-card {
+  border-radius: 0;
+  box-shadow: none!important;
+  .el-card__header {
+    // border-bottom: none;
+    padding: 12px 20px;
+  }
+  .el-card__body {
+    background-color: $grey9;
+    padding-bottom: 5px;
+  }
+  .my-search {
+    .my-group-entry {
+      display: flex;
+      align-items: baseline;
+      padding: 4px 0;
+      border-bottom: 1px solid rgba($grey1, .1);
+      .my-group-des {
+        width: 104px;
+        flex-shrink: 0;
+        padding-right: 20px;
+        color: rgba($grey1, .5);
+        &.width {
+          width: 220px;
+        }
+      }
+      .my-group-content {
+          display: flex;
+          flex-direction: column;
+          .my-group-folder {
+            display: flex;
+            overflow: hidden;
+            height: auto;
+            max-height: 37px;
+            transition: height .3s;
+            &.group-folder-opened {
+              overflow: auto;
+              height: auto;
+              max-height: 152px;
+            }
+            .my-group-options {
+              color: #333;
+              .my-option-item {
+                display: inline-flex;
+                overflow: hidden;
+                height: 28px;
+                flex-shrink: 0;
+                align-items: center;
+                padding: 0 12px;
+                background-color: rgba(33,83,212,.05);
+                color: rgba($grey1, .5);
+                border: 1px solid transparent;
+                margin: 4px 10px 4px 0;
+                background-color: #e2e5f0;
+                line-height: 28px;
+                white-space: nowrap;
+                cursor: pointer;
+                &.my-filter-option {
+                  border: 1px solid rgba(33,83,212,.3);
+                  margin-right: 10px;
+                  background-color: rgba(33,83,212,.05);
+                  color: #2153d4;
+                }
+              }
+              .my-filter-option-close {
+                position: relative;
+                width: 14px;
+                height: 14px;
+                align-self: flex-end;
+                margin-right: -20px;
+                margin-left: 6px;
+                background: #2153d4;
+                cursor: pointer;
+                transform: skewX(-45deg);
+                i {
+                  position: absolute;
+                  top: 1.5px;
+                  right: 1.5px;
+                  color: hsla(0,0%,100%,.7);
+                  font-weight: bolder;
+                  transform: skewX(45deg) scale(.4);
+                  transition: transform .2s ease;
+                }
+              }
+            }
+            .my-group-folder-arrow {
+              width: 25px;
+              flex-shrink: 0;
+              font-size: 18px;
+              line-height: 37px;
+              display: inline-block;
+              i {
+                color: rgba(0,0,0,.5);
+                display: inline-block;
+                cursor: pointer;
+                transition: all .3s;
+                font-size: 12px;
+                &.active {
+                  transform: rotate(180deg);
+                }
+              }
+            }
+          }
+        }
+    }
+  }
+  .my-filter-group-arrow {
+    display: flex;
+    height: 22px;
+    align-items: center;
+    justify-content: center;
+    margin-top: -4px;
+    background-color: #f8f8fa;
+    font-size: 12px;
+    i {
+      color: rgba(0,0,0,.5);
+      cursor: pointer;
+      transition: all .3s;
+      &.active {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

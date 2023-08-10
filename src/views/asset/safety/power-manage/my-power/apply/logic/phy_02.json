@@ -1,0 +1,908 @@
+{
+  "widgetList": [
+    {
+      "type": "static-text",
+      "icon": "static-text",
+      "formItemFlag": false,
+      "options": {
+        "name": "statictext001",
+        "columnWidth": "200px",
+        "hidden": false,
+        "textContent": "申请物理权限表",
+        "customClass": [
+          "bold",
+          "mb-5"
+        ],
+        "onCreated": "",
+        "onMounted": "",
+        "label": "static-text",
+        "fontSize": "16px"
+      },
+      "id": "statictext111193"
+    },
+    {
+      "type": "steps",
+      "icon": "divider",
+      "formItemFlag": false,
+      "options": {
+        "name": "steps74308",
+        "hidden": false,
+        "direction": "horizontal",
+        "space": 400,
+        "active": 1,
+        "steps": [
+          {
+            "label": "申请权限对象",
+            "description": ""
+          },
+          {
+            "label": "权限申请配置",
+            "description": ""
+          }
+        ],
+        "customClass": "",
+        "onCreated": "",
+        "onMounted": "",
+        "label": "steps"
+      },
+      "id": "steps74308"
+    },
+    {
+      "type": "grid",
+      "category": "container",
+      "icon": "grid",
+      "cols": [
+        {
+          "type": "grid-col",
+          "category": "container",
+          "icon": "grid-col",
+          "internal": true,
+          "widgetList": [
+            {
+              "type": "input",
+              "icon": "text-field",
+              "formItemFlag": true,
+              "options": {
+                "name": "environment",
+                "label": "环境：",
+                "labelAlign": "",
+                "type": "text",
+                "defaultValue": "",
+                "placeholder": "",
+                "columnWidth": "200px",
+                "size": "",
+                "labelWidth": null,
+                "labelHidden": false,
+                "readonly": true,
+                "disabled": true,
+                "hidden": false,
+                "clearable": true,
+                "showPassword": false,
+                "required": false,
+                "requiredHint": "",
+                "validation": "",
+                "validationHint": "",
+                "customClass": [],
+                "labelIconClass": null,
+                "labelIconPosition": "rear",
+                "labelTooltip": null,
+                "minLength": null,
+                "maxLength": null,
+                "showWordLimit": false,
+                "prefixIcon": "",
+                "suffixIcon": "",
+                "appendButton": false,
+                "appendButtonDisabled": false,
+                "buttonIcon": "el-icon-search",
+                "onCreated": "",
+                "onMounted": "",
+                "onInput": "",
+                "onChange": "",
+                "onFocus": "",
+                "onBlur": "",
+                "onValidate": ""
+              },
+              "id": "input26745"
+            }
+          ],
+          "options": {
+            "name": "gridCol20634",
+            "hidden": false,
+            "span": 7,
+            "offset": 0,
+            "push": 0,
+            "pull": 0,
+            "responsive": false,
+            "md": 12,
+            "sm": 12,
+            "xs": 12,
+            "customClass": ""
+          },
+          "id": "grid-col-20634"
+        },
+        {
+          "type": "grid-col",
+          "category": "container",
+          "icon": "grid-col",
+          "internal": true,
+          "widgetList": [
+            {
+              "type": "select",
+              "icon": "select-field",
+              "formItemFlag": true,
+              "options": {
+                "name": "businessSegment",
+                "label": "项目：",
+                "labelAlign": "",
+                "defaultValue": "",
+                "placeholder": "",
+                "columnWidth": "200px",
+                "size": "",
+                "labelWidth": null,
+                "labelHidden": false,
+                "disabled": true,
+                "hidden": false,
+                "clearable": true,
+                "filterable": false,
+                "allowCreate": false,
+                "remote": false,
+                "automaticDropdown": false,
+                "multiple": false,
+                "multipleLimit": 0,
+                "optionItems": [
+                  {
+                    "label": "doloreminimofficiaanimin",
+                    "value": "eaeliteiusmodncididuntlaboris"
+                  },
+                  {
+                    "label": "sitv",
+                    "value": "ametfugiatelit"
+                  }
+                ],
+                "required": false,
+                "requiredHint": "",
+                "validation": "",
+                "validationHint": "",
+                "customClass": [],
+                "labelIconClass": null,
+                "labelIconPosition": "rear",
+                "labelTooltip": null,
+                "onCreated": "",
+                "onMounted": "",
+                "onRemoteQuery": "",
+                "onChange": "",
+                "onFocus": "",
+                "onBlur": "",
+                "onValidate": ""
+              },
+              "id": "select54220"
+            }
+          ],
+          "options": {
+            "name": "gridCol39933",
+            "hidden": false,
+            "span": 7,
+            "offset": 0,
+            "push": 0,
+            "pull": 0,
+            "responsive": false,
+            "md": 12,
+            "sm": 12,
+            "xs": 12,
+            "customClass": ""
+          },
+          "id": "grid-col-39933"
+        }
+      ],
+      "options": {
+        "name": "grid16867",
+        "hidden": false,
+        "gutter": 12,
+        "colHeight": "28",
+        "customClass": []
+      },
+      "id": "grid16867"
+    },
+    {
+      "type": "grid",
+      "category": "container",
+      "icon": "grid",
+      "cols": [
+        {
+          "type": "grid-col",
+          "category": "container",
+          "icon": "grid-col",
+          "internal": true,
+          "widgetList": [
+            {
+              "type": "select",
+              "icon": "select-field",
+              "formItemFlag": true,
+              "options": {
+                "name": "logicTable",
+                "label": "物理表：",
+                "labelAlign": "",
+                "defaultValue": "",
+                "placeholder": "",
+                "columnWidth": "200px",
+                "size": "",
+                "labelWidth": null,
+                "labelHidden": false,
+                "disabled": true,
+                "hidden": false,
+                "clearable": true,
+                "filterable": false,
+                "allowCreate": false,
+                "remote": false,
+                "automaticDropdown": false,
+                "multiple": false,
+                "multipleLimit": 0,
+                "optionItems": [],
+                "required": false,
+                "requiredHint": "",
+                "validation": "",
+                "validationHint": "",
+                "customClass": "",
+                "labelIconClass": null,
+                "labelIconPosition": "rear",
+                "labelTooltip": null,
+                "onCreated": "",
+                "onMounted": "",
+                "onRemoteQuery": "",
+                "onChange": "",
+                "onFocus": "",
+                "onBlur": "",
+                "onValidate": ""
+              },
+              "id": "select50725"
+            }
+          ],
+          "options": {
+            "name": "gridCol20547",
+            "hidden": false,
+            "span": 7,
+            "offset": 0,
+            "push": 0,
+            "pull": 0,
+            "responsive": false,
+            "md": 12,
+            "sm": 12,
+            "xs": 12,
+            "customClass": ""
+          },
+          "id": "grid-col-20547"
+        }
+      ],
+      "options": {
+        "name": "grid62446",
+        "hidden": false,
+        "gutter": 12,
+        "colHeight": "28",
+        "customClass": ""
+      },
+      "id": "grid62446"
+    },
+    {
+      "type": "static-text",
+      "icon": "static-text",
+      "formItemFlag": false,
+      "options": {
+        "name": "statictext94178",
+        "columnWidth": "200px",
+        "hidden": false,
+        "textContent": "权限字段",
+        "customClass": [
+          "mt-20",
+          "mb-20"
+        ],
+        "onCreated": "",
+        "onMounted": "",
+        "label": "static-text",
+        "fontSize": "15px"
+      },
+      "id": "statictext94178"
+    },
+    {
+      "type": "table2",
+      "icon": "table",
+      "formItemFlag": false,
+      "options": {
+        "name": "table292509",
+        "hidden": false,
+        "showCheckBox": true,
+        "showSerial": true,
+        "border": false,
+        "columns": [
+          {
+            "prop": "element_name",
+            "label": "字段名",
+            "width": 300
+          },
+          {
+            "prop": "element_code",
+            "label": "字段描述"
+          },
+          {
+            "prop": "element_type",
+            "label": "数据类型",
+            "width": 200
+          }
+        ],
+        "tableData": [
+          {
+            "element_code": "time_day",
+            "element_name": "处理时间",
+            "element_type": "string"
+          },
+          {
+            "element_code": "whole_network",
+            "element_name": "全网统计维度",
+            "element_type": "int"
+          },
+          {
+            "element_code": "c_busstype_id",
+            "element_name": "附注厂商业务类型",
+            "element_type": "string"
+          },
+          {
+            "element_code": "c_busstype",
+            "element_name": "移网业务类型",
+            "element_type": "int"
+          },
+          {
+            "element_code": "rows_num",
+            "element_name": "聚合值",
+            "element_type": "bigint"
+          },
+          {
+            "element_code": "c_msisdn",
+            "element_name": "移动用户号码",
+            "element_type": "string"
+          }
+        ],
+        "optionItems": [
+          {
+            "label": "字段名",
+            "description": "",
+            "prop": "order"
+          },
+          {
+            "label": "字段描述",
+            "description": "",
+            "prop": "description"
+          },
+          {
+            "prop": "dataType",
+            "label": "数据类型"
+          }
+        ],
+        "customClass": [],
+        "labelIconClass": null,
+        "labelIconPosition": "rear",
+        "labelTooltip": null,
+        "onCreated": "",
+        "onMounted": "",
+        "selectionChange": " console.log('select',val)\n // localStorage 缓存\n  sessionStorage.setItem('filedList',JSON.stringify(val))\n",
+        "size": "mini"
+      },
+      "id": "table292509"
+    },
+    {
+      "type": "static-text",
+      "icon": "static-text",
+      "formItemFlag": false,
+      "options": {
+        "name": "statictext62192",
+        "columnWidth": "200px",
+        "hidden": false,
+        "textContent": "权限配置",
+        "fontSize": "15px",
+        "customClass": [
+          "mt-20",
+          "mb-20"
+        ],
+        "onCreated": "",
+        "onMounted": "",
+        "label": "static-text"
+      },
+      "id": "statictext62192"
+    },
+    {
+      "type": "checkbox",
+      "icon": "checkbox-field",
+      "formItemFlag": true,
+      "options": {
+        "name": "auth_type",
+        "label": "权限类型",
+        "labelAlign": "",
+        "defaultValue": [
+          1
+        ],
+        "columnWidth": "200px",
+        "size": "",
+        "displayStyle": "inline",
+        "buttonStyle": false,
+        "border": false,
+        "labelWidth": null,
+        "labelHidden": false,
+        "disabled": false,
+        "hidden": false,
+        "optionItems": [
+          {
+            "label": "查询",
+            "value": 1
+          },
+          {
+            "value": 2,
+            "label": "写入"
+          },
+          {
+            "value": 3,
+            "label": "修改"
+          },
+          {
+            "value": 4,
+            "label": "删除"
+          }
+        ],
+        "required": true,
+        "requiredHint": "",
+        "validation": "",
+        "validationHint": "",
+        "customClass": [],
+        "labelIconClass": null,
+        "labelIconPosition": "rear",
+        "labelTooltip": null,
+        "onCreated": "",
+        "onMounted": "",
+        "onChange": "",
+        "onValidate": ""
+      },
+      "id": "checkbox80667"
+    },
+    {
+      "type": "static-text",
+      "icon": "static-text",
+      "formItemFlag": false,
+      "options": {
+        "name": "statictext66142",
+        "columnWidth": "200px",
+        "hidden": false,
+        "textContent": "账号类型",
+        "fontSize": "15px",
+        "customClass": [
+          "mt-20",
+          "mb-10"
+        ],
+        "onCreated": "",
+        "onMounted": "",
+        "label": "static-text"
+      },
+      "id": "statictext66142"
+    },
+    {
+      "type": "grid",
+      "category": "container",
+      "icon": "grid",
+      "cols": [
+        {
+          "type": "grid-col",
+          "category": "container",
+          "icon": "grid-col",
+          "internal": true,
+          "widgetList": [
+            {
+              "type": "checkbox",
+              "icon": "checkbox-field",
+              "formItemFlag": true,
+              "options": {
+                "name": "personalAccount",
+                "label": "个人账号",
+                "labelAlign": "",
+                "defaultValue": [],
+                "columnWidth": "200px",
+                "size": "",
+                "displayStyle": "inline",
+                "buttonStyle": false,
+                "border": false,
+                "labelWidth": null,
+                "labelHidden": true,
+                "disabled": false,
+                "hidden": false,
+                "optionItems": [
+                  {
+                    "label": "个人账号",
+                    "value": 1
+                  }
+                ],
+                "required": false,
+                "requiredHint": "",
+                "validation": "",
+                "validationHint": "",
+                "customClass": [],
+                "labelIconClass": null,
+                "labelIconPosition": "rear",
+                "labelTooltip": null,
+                "onCreated": "",
+                "onMounted": "",
+                "onChange": "",
+                "onValidate": ""
+              },
+              "id": "checkbox56786"
+            }
+          ],
+          "options": {
+            "name": "gridCol25307",
+            "hidden": false,
+            "span": 3,
+            "offset": 0,
+            "push": 0,
+            "pull": 0,
+            "responsive": false,
+            "md": 12,
+            "sm": 12,
+            "xs": 12,
+            "customClass": ""
+          },
+          "id": "grid-col-25307"
+        },
+        {
+          "type": "grid-col",
+          "category": "container",
+          "icon": "grid-col",
+          "internal": true,
+          "widgetList": [
+            {
+              "type": "select",
+              "icon": "select-field",
+              "formItemFlag": true,
+              "options": {
+                "name": "expiration",
+                "label": "有效期至",
+                "labelAlign": "label-right-align",
+                "defaultValue": "",
+                "placeholder": "请选择有效期",
+                "columnWidth": "200px",
+                "size": "",
+                "labelWidth": null,
+                "labelHidden": false,
+                "disabled": false,
+                "hidden": false,
+                "clearable": true,
+                "filterable": false,
+                "allowCreate": false,
+                "remote": false,
+                "automaticDropdown": false,
+                "multiple": false,
+                "multipleLimit": 0,
+                "optionItems": [
+                  {
+                    "value": "0",
+                    "label": "自定义"
+                  },
+                  {
+                    "label": "长期",
+                    "value": 1
+                  },
+                  {
+                    "label": "一天",
+                    "value": 2
+                  },
+                  {
+                    "label": "一周",
+                    "value": 3
+                  }
+                ],
+                "required": true,
+                "requiredHint": "",
+                "validation": "",
+                "validationHint": "",
+                "customClass": "",
+                "labelIconClass": null,
+                "labelIconPosition": "rear",
+                "labelTooltip": null,
+                "onCreated": "",
+                "onMounted": "",
+                "onRemoteQuery": "",
+                "onChange": "",
+                "onFocus": "",
+                "onBlur": "",
+                "onValidate": ""
+              },
+              "id": "select92707"
+            }
+          ],
+          "options": {
+            "name": "gridCol62683",
+            "hidden": false,
+            "span": 6,
+            "offset": 0,
+            "push": 0,
+            "pull": 0,
+            "responsive": false,
+            "md": 12,
+            "sm": 12,
+            "xs": 12,
+            "customClass": ""
+          },
+          "id": "grid-col-62683"
+        },
+        {
+          "type": "grid-col",
+          "category": "container",
+          "icon": "grid-col",
+          "internal": true,
+          "widgetList": [
+            {
+              "type": "date",
+              "icon": "date-field",
+              "formItemFlag": true,
+              "options": {
+                "name": "date",
+                "label": "date",
+                "labelAlign": "",
+                "type": "date",
+                "defaultValue": null,
+                "placeholder": "",
+                "columnWidth": "200px",
+                "size": "",
+                "labelWidth": null,
+                "labelHidden": true,
+                "readonly": false,
+                "disabled": false,
+                "hidden": false,
+                "clearable": true,
+                "editable": false,
+                "format": "yyyy-MM-dd",
+                "valueFormat": "yyyy-MM-dd",
+                "required": false,
+                "requiredHint": "",
+                "validation": "",
+                "validationHint": "",
+                "customClass": "",
+                "labelIconClass": null,
+                "labelIconPosition": "rear",
+                "labelTooltip": null,
+                "onCreated": "",
+                "onMounted": "",
+                "onChange": "",
+                "onFocus": "",
+                "onBlur": "",
+                "onValidate": ""
+              },
+              "id": "date32266"
+            }
+          ],
+          "options": {
+            "name": "gridCol626835",
+            "hidden": false,
+            "span": 4,
+            "offset": 0,
+            "push": 0,
+            "pull": 0,
+            "responsive": false,
+            "md": 12,
+            "sm": 12,
+            "xs": 12,
+            "customClass": ""
+          },
+          "id": "grid-col-95849"
+        }
+      ],
+      "options": {
+        "name": "grid6732",
+        "hidden": false,
+        "gutter": 12,
+        "colHeight": "28",
+        "customClass": ""
+      },
+      "id": "grid6732"
+    },
+    {
+      "type": "grid",
+      "category": "container",
+      "icon": "grid",
+      "cols": [
+        {
+          "type": "grid-col",
+          "category": "container",
+          "icon": "grid-col",
+          "internal": true,
+          "widgetList": [
+            {
+              "type": "checkbox",
+              "icon": "checkbox-field",
+              "formItemFlag": true,
+              "options": {
+                "name": "projectAccount",
+                "label": "checkbox",
+                "labelAlign": "",
+                "defaultValue": [],
+                "columnWidth": "200px",
+                "size": "",
+                "displayStyle": "inline",
+                "buttonStyle": false,
+                "border": false,
+                "labelWidth": null,
+                "labelHidden": true,
+                "disabled": false,
+                "hidden": false,
+                "optionItems": [
+                  {
+                    "label": "项目生产账号",
+                    "value": "1"
+                  }
+                ],
+                "required": false,
+                "requiredHint": "",
+                "validation": "",
+                "validationHint": "",
+                "customClass": "",
+                "labelIconClass": null,
+                "labelIconPosition": "rear",
+                "labelTooltip": null,
+                "onCreated": "",
+                "onMounted": "",
+                "onChange": "",
+                "onValidate": ""
+              },
+              "id": "checkbox15009"
+            }
+          ],
+          "options": {
+            "name": "gridCol63847",
+            "hidden": false,
+            "span": 3,
+            "offset": 0,
+            "push": 0,
+            "pull": 0,
+            "responsive": false,
+            "md": 12,
+            "sm": 12,
+            "xs": 12,
+            "customClass": ""
+          },
+          "id": "grid-col-63847"
+        },
+        {
+          "type": "grid-col",
+          "category": "container",
+          "icon": "grid-col",
+          "internal": true,
+          "widgetList": [
+            {
+              "type": "select",
+              "icon": "select-field",
+              "formItemFlag": true,
+              "options": {
+                "name": "project",
+                "label": "归属项目",
+                "labelAlign": "",
+                "defaultValue": "",
+                "placeholder": "请选择项目",
+                "columnWidth": "200px",
+                "size": "",
+                "labelWidth": null,
+                "labelHidden": false,
+                "disabled": false,
+                "hidden": false,
+                "clearable": true,
+                "filterable": false,
+                "allowCreate": false,
+                "remote": false,
+                "automaticDropdown": false,
+                "multiple": false,
+                "multipleLimit": 0,
+                "optionItems": [
+                  {
+                    "label": "doloreminimofficiaanimin",
+                    "value": 69016914.84776652
+                  },
+                  {
+                    "label": "sitv",
+                    "value": 10744848.00237681
+                  }
+                ],
+                "required": true,
+                "requiredHint": "",
+                "validation": "",
+                "validationHint": "",
+                "customClass": "",
+                "labelIconClass": null,
+                "labelIconPosition": "rear",
+                "labelTooltip": null,
+                "onCreated": "",
+                "onMounted": "",
+                "onRemoteQuery": "",
+                "onChange": "",
+                "onFocus": "",
+                "onBlur": "",
+                "onValidate": ""
+              },
+              "id": "select113395"
+            }
+          ],
+          "options": {
+            "name": "project",
+            "hidden": false,
+            "span": 6,
+            "offset": 0,
+            "push": 0,
+            "pull": 0,
+            "responsive": false,
+            "md": 12,
+            "sm": 12,
+            "xs": 12,
+            "customClass": ""
+          },
+          "id": "grid-col-67292"
+        }
+      ],
+      "options": {
+        "name": "grid34711",
+        "hidden": false,
+        "gutter": 12,
+        "colHeight": "28",
+        "customClass": ""
+      },
+      "id": "grid34711"
+    },
+    {
+      "type": "textarea",
+      "icon": "textarea-field",
+      "formItemFlag": true,
+      "options": {
+        "name": "remark",
+        "label": "申请原因",
+        "labelAlign": "label-right-align",
+        "rows": 3,
+        "defaultValue": "",
+        "placeholder": "请输入申请原因",
+        "columnWidth": "200px",
+        "size": "",
+        "labelWidth": null,
+        "labelHidden": false,
+        "readonly": false,
+        "disabled": false,
+        "hidden": false,
+        "required": true,
+        "requiredHint": "",
+        "validation": "",
+        "validationHint": "",
+        "customClass": [],
+        "labelIconClass": null,
+        "labelIconPosition": "rear",
+        "labelTooltip": null,
+        "minLength": null,
+        "maxLength": 128,
+        "showWordLimit": true,
+        "onCreated": "",
+        "onMounted": "",
+        "onInput": "",
+        "onChange": "",
+        "onFocus": "",
+        "onBlur": "",
+        "onValidate": ""
+      },
+      "id": "textarea86959"
+    }
+  ],
+  "formConfig": {
+    "modelName": "formData",
+    "refName": "vForm",
+    "rulesName": "rules",
+    "labelWidth": 100,
+    "labelPosition": "left",
+    "size": "mini",
+    "labelAlign": "label-right-align",
+    "cssCode": ".bg {\r\n  background-color: #999;\r\n}\r\n\r\n.bold {\r\n  font-weight: bold;\r\n}\r\n.center {\r\n  text-align: center;\r\n}\r\n.mr-10 {\r\n  margin-right: 10px;\r\n}\r\n\r\n.mt-20 {\r\n  margin-top: 20px;\r\n}\r\n.mb-5 {\r\n  margin-bottom: 5px;\r\n}\r\n.mb-10 {\r\n  margin-bottom: 10px;\r\n}\r\n.mb-20 {\r\n  margin-bottom: 20px;\r\n}\r\n\r\n.el-steps {\r\n  justify-content: center;\r\n}",
+    "customClass": [],
+    "functions": "",
+    "layoutType": "PC",
+    "onFormCreated": "",
+    "onFormMounted": "const baseurl = sessionStorage.getItem('baseurl')\nlet businessSegmentR = this.getWidgetRef('businessSegment')\naxios.post(`${baseurl}/planProject/listPage`).then(function(res){\n  if(res.data.flag) {\n    const data = res.data.data.map(ele => {\n      return {label:ele.project_name, value:ele.project_code}\n    })\n    businessSegmentR.loadOptions(data)\n  }\n})\n\n\nlet logicTableR = this.getWidgetRef('logicTable')\naxios.post(`${baseurl}/authority/getTables`,{type:1}).then(function(res){\n  if(res.data.flag) {\n    const data = res.data.data.map(ele => {\n      return {label:ele.cube_code, value:ele.cube_id}\n    })\n    logicTableR.loadOptions(data)\n  }\n})\n\nlet tableR = this.getWidgetRef('table292509')\nconst cub_id = localStorage.getItem('logic_cub_id')\naxios.post(`${baseurl}/authority/getColumns`,{cub_id}).then(function(res){\n  if(res.data.flag) {\n    const data = res.data.data\n    tableR.loadTableData(data)\n  }\n})\n\nlet projectR = this.getWidgetRef('project')\naxios.post(`${baseurl}/planProject/listPage`).then(function(res){\n  if(res.data.flag) {\n    const data = res.data.data.map(ele => {\n      return {label:ele.project_name, value:ele.id}\n    })\n    projectR.loadOptions(data)\n  }\n})",
+    "onFormDataChange": "",
+    "onFormValidate": "",
+    "jsonVersion": 3
+  }
+}

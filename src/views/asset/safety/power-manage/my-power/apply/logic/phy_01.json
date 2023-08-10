@@ -1,0 +1,216 @@
+{
+  "widgetList": [
+    {
+      "type": "static-text",
+      "icon": "static-text",
+      "formItemFlag": false,
+      "options": {
+        "name": "statictext001",
+        "columnWidth": "200px",
+        "hidden": false,
+        "textContent": "申请物理表权限",
+        "customClass": [
+          "bold",
+          "mb-5"
+        ],
+        "onCreated": "",
+        "onMounted": "",
+        "label": "static-text",
+        "fontSize": "16px"
+      },
+      "id": "statictext111193"
+    },
+    {
+      "type": "steps",
+      "icon": "divider",
+      "formItemFlag": false,
+      "options": {
+        "name": "steps59562",
+        "hidden": false,
+        "direction": "horizontal",
+        "space": 400,
+        "active": 0,
+        "steps": [
+          {
+            "label": "申请权限对象",
+            "description": ""
+          },
+          {
+            "label": "权限申请配置",
+            "description": ""
+          }
+        ],
+        "customClass": [
+          "mb-20"
+        ],
+        "onCreated": "",
+        "onMounted": "",
+        "label": "steps"
+      },
+      "id": "steps59562"
+    },
+    {
+      "type": "select",
+      "icon": "select-field",
+      "formItemFlag": true,
+      "options": {
+        "name": "environment",
+        "label": "环境",
+        "labelAlign": "",
+        "defaultValue": "",
+        "placeholder": "请选择环境",
+        "columnWidth": "200px",
+        "size": "",
+        "labelWidth": null,
+        "labelHidden": false,
+        "disabled": false,
+        "hidden": false,
+        "clearable": true,
+        "filterable": false,
+        "allowCreate": false,
+        "remote": false,
+        "automaticDropdown": false,
+        "multiple": false,
+        "multipleLimit": 0,
+        "optionItems": [
+          {
+            "label": "生产环境",
+            "value": "生产环境"
+          },
+          {
+            "label": "测试环境",
+            "value": "测试环境"
+          },
+          {
+            "value": "开发环境",
+            "label": "开发环境"
+          }
+        ],
+        "required": true,
+        "requiredHint": "",
+        "validation": "",
+        "validationHint": "",
+        "customClass": [
+          "width400"
+        ],
+        "labelIconClass": null,
+        "labelIconPosition": "rear",
+        "labelTooltip": null,
+        "onCreated": "",
+        "onMounted": "",
+        "onRemoteQuery": "",
+        "onChange": "",
+        "onFocus": "",
+        "onBlur": "",
+        "onValidate": ""
+      },
+      "id": "select113395"
+    },
+    {
+      "type": "select",
+      "icon": "select-field",
+      "formItemFlag": true,
+      "options": {
+        "name": "businessSegment1",
+        "label": "项目",
+        "labelAlign": "label-right-align",
+        "defaultValue": "",
+        "placeholder": "请选择项目",
+        "columnWidth": "200px",
+        "size": "",
+        "labelWidth": null,
+        "labelHidden": false,
+        "disabled": false,
+        "hidden": false,
+        "clearable": true,
+        "filterable": false,
+        "allowCreate": false,
+        "remote": false,
+        "automaticDropdown": false,
+        "multiple": false,
+        "multipleLimit": 0,
+        "optionItems": [],
+        "required": true,
+        "requiredHint": "",
+        "validation": "",
+        "validationHint": "",
+        "customClass": [
+          "width400"
+        ],
+        "labelIconClass": null,
+        "labelIconPosition": "rear",
+        "labelTooltip": null,
+        "onCreated": "",
+        "onMounted": "",
+        "onRemoteQuery": "",
+        "onChange": "",
+        "onFocus": "",
+        "onBlur": "",
+        "onValidate": ""
+      },
+      "id": "select92707"
+    },
+    {
+      "type": "select",
+      "icon": "select-field",
+      "formItemFlag": true,
+      "options": {
+        "name": "logicTable1",
+        "label": "物理表",
+        "labelAlign": "label-right-align",
+        "defaultValue": "",
+        "placeholder": "请选择物理表",
+        "columnWidth": "200px",
+        "size": "",
+        "labelWidth": null,
+        "labelHidden": false,
+        "disabled": false,
+        "hidden": false,
+        "clearable": true,
+        "filterable": false,
+        "allowCreate": false,
+        "remote": false,
+        "automaticDropdown": false,
+        "multiple": false,
+        "multipleLimit": 0,
+        "optionItems": [],
+        "required": false,
+        "requiredHint": "",
+        "validation": "",
+        "validationHint": "",
+        "customClass": [
+          "width500"
+        ],
+        "labelIconClass": null,
+        "labelIconPosition": "rear",
+        "labelTooltip": null,
+        "onCreated": "",
+        "onMounted": "",
+        "onRemoteQuery": "",
+        "onChange": "localStorage.setItem('logic_cub_id',value)",
+        "onFocus": "",
+        "onBlur": "",
+        "onValidate": ""
+      },
+      "id": "select51428"
+    }
+  ],
+  "formConfig": {
+    "modelName": "formData",
+    "refName": "vForm",
+    "rulesName": "rules",
+    "labelWidth": 100,
+    "labelPosition": "left",
+    "size": "mini",
+    "labelAlign": "label-right-align",
+    "cssCode": ".bg {\r\n  background-color: #999;\r\n}\r\n\r\n.bold {\r\n  font-weight: bold;\r\n}\r\n.center {\r\n  text-align: center;\r\n}\r\n.mr-10 {\r\n  margin-right: 10px;\r\n}\r\n\r\n.mt-20 {\r\n  margin-top: 20px;\r\n}\r\n.mb-5 {\r\n  margin-bottom: 5px;\r\n}\r\n.mb-10 {\r\n  margin-bottom: 10px;\r\n}\r\n.mb-20 {\r\n  margin-bottom: 20px;\r\n}\r\n\r\n.el-steps {\r\n  justify-content: center;\r\n}\r\n.width300 {\r\n  width: 300px;\r\n}\r\n.width400 {\r\n  width: 400px;\r\n}\r\n.width500 {\r\n  width: 500px;\r\n}",
+    "customClass": [],
+    "functions": "",
+    "layoutType": "PC",
+    "onFormCreated": "",
+    "onFormMounted": "const baseurl = sessionStorage.getItem('baseurl')\nlet businessSegmentR = this.getWidgetRef('businessSegment1')\naxios.post(`${baseurl}/planProject/listPage`).then(function(res){\n  if(res.data.flag) {\n    const data = res.data.data.map(ele => {\n      return {label:ele.project_name, value:ele.project_code}\n    })\n    businessSegmentR.loadOptions(data)\n  }\n})\n\nlet logicTableR = this.getWidgetRef('logicTable1')\naxios.post(`${baseurl}/authority/getTables`,{type:1}).then(function(res){\n  if(res.data.flag) {\n    const data = res.data.data.map(ele => {\n      return {label:ele.cube_code, value:ele.cube_id}\n    })\n    logicTableR.loadOptions(data)\n  }\n})\n",
+    "onFormDataChange": "",
+    "onFormValidate": "",
+    "jsonVersion": 3
+  }
+}

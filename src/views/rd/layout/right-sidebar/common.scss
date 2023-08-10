@@ -1,0 +1,61 @@
+.side-panel-view {
+  height: 100%;
+  font-size: 12px;
+  padding: 15px;
+  background-color: #F8F8FA;
+  .empty {
+    text-align: center;
+    margin: 0 auto;
+    padding: 50px 0;
+  }
+
+  .name {
+    color: $grey3;
+  }
+
+  .spv-main {
+    height: 100%;
+    .title {
+      margin-bottom: 10px;
+    }
+  }
+
+  .spv-histories {
+    height: 100%;
+    overflow: hidden;
+
+    $h4Height: 40px;
+    $pHeight: 36px;
+
+    h4 {
+      font-size: 16px;
+      height: $h4Height;
+      line-height: $h4Height;
+    }
+
+    p {
+      height: $pHeight;
+      line-height: $pHeight;
+      color: $grey5;
+    }
+
+    ul {
+      max-height: calc(100% - #{$h4Height} - #{$pHeight});
+      overflow: auto;
+
+      li {
+        line-height: 28px;
+        padding-left: 30px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $grey8;
+        }
+
+        .iconfont {
+          color: lighten($--color-primary, 10%);
+        }
+      }
+    }
+  }
+}
